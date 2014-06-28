@@ -15,12 +15,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var satellite: Satellite?
     
     @IBOutlet var mapView: MKMapView
+    @IBOutlet var switchToStatsView: UIView
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.mapView.delegate = self
         
+        self.switchToStatsView.backgroundColor = UIColor(patternImage: UIImage(named: "tiny_grid.png"))
+        
+        // Load up the ISS data
         self.networkManager.loadSatelliteData({
             (satellite) in
             self.satellite = satellite
