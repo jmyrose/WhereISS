@@ -14,9 +14,9 @@ class Satellite {
     let velocity: Double
     let altitude: Double
     
-    init(lat:Double, long:Double, vel:Double, alt:Double) {
+    init(lat:Double, longi:Double, vel:Double, alt:Double) {
         latitude = lat
-        longitute = long
+        longitute = longi
         velocity = vel
         altitude = alt
     }

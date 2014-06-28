@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  WhereISS
 //
 //  Created by Jackie Myrose on 6/28/14.
@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
     let networkManager:NetworkManager = NetworkManager()
     var satellite: Satellite?
@@ -24,7 +24,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         self.networkManager.loadSatelliteData({
             (satellite) in
             self.satellite = satellite
-            self.updateMapWithData(self.satellite!)
+            self.updateMapWithData(satellite.latitude, longi: satellite.longitute)
         }, {
             (error) in
             let alert:UIAlertController = UIAlertController(title: "Error!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
@@ -33,10 +33,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
         })
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if segue.identifier == "stats" {
+            let statsViewController:StatsViewController = segue.destinationViewController as StatsViewController
+            statsViewController.satellite = self.satellite
+        }
+    }
+    
     // Mark where the satellite is on the map with the newly loaded data
-    func updateMapWithData(satellite:Satellite){
+    func updateMapWithData(lat:Double, longi:Double){
         // Set the visual map region
-        let centerCoord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: satellite.latitude, longitude: satellite.longitute);
+        let centerCoord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: longi);
         let viewRegion:MKCoordinateRegion = MKCoordinateRegion(center: centerCoord, span: MKCoordinateSpanMake(50, 50))
         mapView.setRegion(viewRegion, animated: true)
         
@@ -52,7 +59,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // Make the annotation point a picture of the ISS
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView!{
         let annotationView:MKAnnotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
-        annotationView.image = UIImage(named: "iss_pic.png")
+        annotationView.image = UIImage(named: "iss.png")
         // Make the view smaller
         annotationView.transform = CGAffineTransformMakeScale(0.1, 0.1)
         return annotationView

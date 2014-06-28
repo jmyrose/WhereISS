@@ -47,7 +47,7 @@ class NetworkManager {
                                 if let altObj : AnyObject = respDict["altitude"] {
                                     let altitude = altObj as Double
                                     
-                                    success(satellite: Satellite(lat: latitude, long: longitude, vel: velocity, alt: altitude))
+                                    success(satellite: Satellite(lat: latitude, longi: longitude, vel: velocity, alt: altitude))
                                 }
                             }
                         }

@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhereISS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="WhereISS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,10 +19,24 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fZO-8W-Stx">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbW-EY-UeF">
+                                <rect key="frame" x="420" y="420" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="fPy-NX-RbQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="rfd-Ft-TNB"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ygz-4h-7B3" appends="YES" id="jIm-sM-Zp4"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fZO-8W-Stx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="5qn-2y-jeQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FbW-EY-UeF" secondAttribute="bottom" id="Dsk-oo-7wd"/>
+                            <constraint firstAttribute="trailing" secondItem="FbW-EY-UeF" secondAttribute="trailing" id="M2s-hy-dRA"/>
                             <constraint firstItem="fZO-8W-Stx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NLZ-p7-dPn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fZO-8W-Stx" secondAttribute="bottom" id="PRU-LC-IRm"/>
                             <constraint firstAttribute="trailing" secondItem="fZO-8W-Stx" secondAttribute="trailing" id="gD8-c8-eGe"/>
@@ -34,7 +48,100 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ygz-4h-7B3">
+                    <connections>
+                        <segue destination="nnj-Vr-Q0y" kind="presentation" identifier="stats" modalTransitionStyle="partialCurl" id="SFM-Zu-oAh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
+        <!--Stats View Controller-->
+        <scene sceneID="yYD-Yd-00v">
+            <objects>
+                <viewController id="nnj-Vr-Q0y" customClass="StatsViewController" customModule="WhereISS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wqf-jB-Xgh"/>
+                        <viewControllerLayoutGuide type="bottom" id="3ej-0N-j4P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zWQ-Mw-4fz">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s97-i2-mvq">
+                                <rect key="frame" x="20" y="120" width="440" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-ce-pcr">
+                                <rect key="frame" x="20" y="181" width="440" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globe.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-fu-ulq">
+                                <rect key="frame" x="0.0" y="420" width="60" height="60"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="LnX-hv-CVx" appends="YES" id="S2V-ud-CAv"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dg6-Qr-g9H">
+                                <rect key="frame" x="20" y="242" width="440" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitutde:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-mb-HTZ">
+                                <rect key="frame" x="20" y="303" width="440" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISS Stats" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc7-f1-eVU">
+                                <rect key="frame" x="191.5" y="45" width="97" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wc7-f1-eVU" firstAttribute="top" secondItem="Wqf-jB-Xgh" secondAttribute="bottom" constant="25" id="4wu-Fk-3JF"/>
+                            <constraint firstAttribute="trailing" secondItem="KBz-mb-HTZ" secondAttribute="trailing" constant="20" id="8QL-UK-Aff"/>
+                            <constraint firstAttribute="trailing" secondItem="dg6-Qr-g9H" secondAttribute="trailing" constant="20" id="DS7-Jk-AYU"/>
+                            <constraint firstAttribute="centerX" secondItem="wc7-f1-eVU" secondAttribute="centerX" id="I78-dq-p11"/>
+                            <constraint firstItem="B8c-ce-pcr" firstAttribute="top" secondItem="s97-i2-mvq" secondAttribute="bottom" constant="40" id="IHh-Gm-Zrc"/>
+                            <constraint firstItem="KBz-mb-HTZ" firstAttribute="leading" secondItem="zWQ-Mw-4fz" secondAttribute="leading" constant="20" id="JAZ-B1-b3W"/>
+                            <constraint firstAttribute="trailing" secondItem="s97-i2-mvq" secondAttribute="trailing" constant="20" id="RCX-Zf-cIY"/>
+                            <constraint firstItem="dg6-Qr-g9H" firstAttribute="leading" secondItem="zWQ-Mw-4fz" secondAttribute="leading" constant="20" id="RlW-vn-Hlr"/>
+                            <constraint firstItem="s97-i2-mvq" firstAttribute="top" secondItem="Wqf-jB-Xgh" secondAttribute="bottom" constant="100" id="SGU-VD-eEX"/>
+                            <constraint firstAttribute="trailing" secondItem="B8c-ce-pcr" secondAttribute="trailing" constant="20" id="UpD-YE-CyW"/>
+                            <constraint firstItem="dg6-Qr-g9H" firstAttribute="top" secondItem="B8c-ce-pcr" secondAttribute="bottom" constant="40" id="YdO-3I-MFo"/>
+                            <constraint firstItem="KBz-mb-HTZ" firstAttribute="top" secondItem="dg6-Qr-g9H" secondAttribute="bottom" constant="40" id="fGQ-ub-rmu"/>
+                            <constraint firstItem="B8c-ce-pcr" firstAttribute="leading" secondItem="zWQ-Mw-4fz" secondAttribute="leading" constant="20" id="kgl-Tw-Ayi"/>
+                            <constraint firstItem="s97-i2-mvq" firstAttribute="leading" secondItem="zWQ-Mw-4fz" secondAttribute="leading" constant="20" id="t0D-Xl-XBW"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <outlet property="altitudeLabel" destination="s97-i2-mvq" id="i3e-Ab-dGV"/>
+                        <outlet property="latitudeLabel" destination="dg6-Qr-g9H" id="2cQ-oH-6cd"/>
+                        <outlet property="longitutdeLabel" destination="KBz-mb-HTZ" id="DMm-FU-jvo"/>
+                        <outlet property="velocityLabel" destination="B8c-ce-pcr" id="zgb-iz-Oyz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRd-BG-oU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LnX-hv-CVx">
+                    <connections>
+                        <action selector="globeTapped:" destination="nnj-Vr-Q0y" id="CYy-Od-7M9"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="723" y="141"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="globe.png" width="1000" height="1000"/>
+    </resources>
 </document>

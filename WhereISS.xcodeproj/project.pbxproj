@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		D52F911F195F2085007A08E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F911E195F2085007A08E1 /* AppDelegate.swift */; };
-		D52F9121195F2085007A08E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9120195F2085007A08E1 /* ViewController.swift */; };
+		D52F9121195F2085007A08E1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9120195F2085007A08E1 /* MapViewController.swift */; };
 		D52F9124195F2085007A08E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52F9122195F2085007A08E1 /* Main.storyboard */; };
 		D52F9126195F2085007A08E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52F9125195F2085007A08E1 /* Images.xcassets */; };
 		D52F9132195F2085007A08E1 /* WhereISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9131195F2085007A08E1 /* WhereISSTests.swift */; };
 		D52F913C195F2243007A08E1 /* Satellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F913B195F2243007A08E1 /* Satellite.swift */; };
 		D52F913E195F2805007A08E1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52F913D195F2805007A08E1 /* MapKit.framework */; };
-		D52F9143195F559D007A08E1 /* iss_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = D52F9142195F559D007A08E1 /* iss_pic.png */; };
 		D52F9145195F5E67007A08E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9144195F5E67007A08E1 /* NetworkManager.swift */; };
+		D52F9147195F685D007A08E1 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9146195F685D007A08E1 /* StatsViewController.swift */; };
+		D52F9148195F685D007A08E1 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9146195F685D007A08E1 /* StatsViewController.swift */; };
+		D52F914A195F6F70007A08E1 /* iss.png in Resources */ = {isa = PBXBuildFile; fileRef = D52F9149195F6F70007A08E1 /* iss.png */; };
+		D52F914C195F6F75007A08E1 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = D52F914B195F6F75007A08E1 /* globe.png */; };
+		D587F30D195F70FC00E50841 /* tiny_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = D587F30C195F70FC00E50841 /* tiny_grid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +36,7 @@
 		D52F9119195F2085007A08E1 /* WhereISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52F911D195F2085007A08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D52F911E195F2085007A08E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D52F9120195F2085007A08E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D52F9120195F2085007A08E1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D52F9123195F2085007A08E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D52F9125195F2085007A08E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D52F912B195F2085007A08E1 /* WhereISSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereISSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,8 +44,11 @@
 		D52F9131195F2085007A08E1 /* WhereISSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereISSTests.swift; sourceTree = "<group>"; };
 		D52F913B195F2243007A08E1 /* Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Satellite.swift; sourceTree = "<group>"; };
 		D52F913D195F2805007A08E1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D52F9142195F559D007A08E1 /* iss_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iss_pic.png; path = Images/iss_pic.png; sourceTree = "<group>"; };
 		D52F9144195F5E67007A08E1 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D52F9146195F685D007A08E1 /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		D52F9149195F6F70007A08E1 /* iss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iss.png; path = Images/iss.png; sourceTree = "<group>"; };
+		D52F914B195F6F75007A08E1 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = globe.png; path = Images/globe.png; sourceTree = "<group>"; };
+		D587F30C195F70FC00E50841 /* tiny_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tiny_grid.png; path = Images/tiny_grid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				D52F911E195F2085007A08E1 /* AppDelegate.swift */,
-				D52F9120195F2085007A08E1 /* ViewController.swift */,
 				D52F913B195F2243007A08E1 /* Satellite.swift */,
 				D52F9144195F5E67007A08E1 /* NetworkManager.swift */,
+				D52F9120195F2085007A08E1 /* MapViewController.swift */,
+				D52F9146195F685D007A08E1 /* StatsViewController.swift */,
 				D52F9122195F2085007A08E1 /* Main.storyboard */,
 				D52F9125195F2085007A08E1 /* Images.xcassets */,
 				D52F911C195F2085007A08E1 /* Supporting Files */,
@@ -125,7 +133,9 @@
 		D52F913F195F5558007A08E1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D52F9142195F559D007A08E1 /* iss_pic.png */,
+				D587F30C195F70FC00E50841 /* tiny_grid.png */,
+				D52F914B195F6F75007A08E1 /* globe.png */,
+				D52F9149195F6F70007A08E1 /* iss.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -210,9 +220,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52F914A195F6F70007A08E1 /* iss.png in Resources */,
+				D587F30D195F70FC00E50841 /* tiny_grid.png in Resources */,
+				D52F914C195F6F75007A08E1 /* globe.png in Resources */,
 				D52F9124195F2085007A08E1 /* Main.storyboard in Resources */,
 				D52F9126195F2085007A08E1 /* Images.xcassets in Resources */,
-				D52F9143195F559D007A08E1 /* iss_pic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +243,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52F9145195F5E67007A08E1 /* NetworkManager.swift in Sources */,
-				D52F9121195F2085007A08E1 /* ViewController.swift in Sources */,
+				D52F9121195F2085007A08E1 /* MapViewController.swift in Sources */,
 				D52F911F195F2085007A08E1 /* AppDelegate.swift in Sources */,
+				D52F9147195F685D007A08E1 /* StatsViewController.swift in Sources */,
 				D52F913C195F2243007A08E1 /* Satellite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52F9148195F685D007A08E1 /* StatsViewController.swift in Sources */,
 				D52F9132195F2085007A08E1 /* WhereISSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
