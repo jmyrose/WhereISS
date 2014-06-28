@@ -12,6 +12,10 @@
 		D52F9124195F2085007A08E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52F9122195F2085007A08E1 /* Main.storyboard */; };
 		D52F9126195F2085007A08E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D52F9125195F2085007A08E1 /* Images.xcassets */; };
 		D52F9132195F2085007A08E1 /* WhereISSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9131195F2085007A08E1 /* WhereISSTests.swift */; };
+		D52F913C195F2243007A08E1 /* Satellite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F913B195F2243007A08E1 /* Satellite.swift */; };
+		D52F913E195F2805007A08E1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52F913D195F2805007A08E1 /* MapKit.framework */; };
+		D52F9143195F559D007A08E1 /* iss_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = D52F9142195F559D007A08E1 /* iss_pic.png */; };
+		D52F9145195F5E67007A08E1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52F9144195F5E67007A08E1 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		D52F912B195F2085007A08E1 /* WhereISSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereISSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52F9130195F2085007A08E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D52F9131195F2085007A08E1 /* WhereISSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereISSTests.swift; sourceTree = "<group>"; };
+		D52F913B195F2243007A08E1 /* Satellite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Satellite.swift; sourceTree = "<group>"; };
+		D52F913D195F2805007A08E1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D52F9142195F559D007A08E1 /* iss_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iss_pic.png; path = Images/iss_pic.png; sourceTree = "<group>"; };
+		D52F9144195F5E67007A08E1 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52F913E195F2805007A08E1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +66,7 @@
 		D52F9110195F2085007A08E1 = {
 			isa = PBXGroup;
 			children = (
+				D52F913D195F2805007A08E1 /* MapKit.framework */,
 				D52F911B195F2085007A08E1 /* WhereISS */,
 				D52F912E195F2085007A08E1 /* WhereISSTests */,
 				D52F911A195F2085007A08E1 /* Products */,
@@ -77,9 +87,12 @@
 			children = (
 				D52F911E195F2085007A08E1 /* AppDelegate.swift */,
 				D52F9120195F2085007A08E1 /* ViewController.swift */,
+				D52F913B195F2243007A08E1 /* Satellite.swift */,
+				D52F9144195F5E67007A08E1 /* NetworkManager.swift */,
 				D52F9122195F2085007A08E1 /* Main.storyboard */,
 				D52F9125195F2085007A08E1 /* Images.xcassets */,
 				D52F911C195F2085007A08E1 /* Supporting Files */,
+				D52F913F195F5558007A08E1 /* Images */,
 			);
 			path = WhereISS;
 			sourceTree = "<group>";
@@ -107,6 +120,14 @@
 				D52F9130195F2085007A08E1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D52F913F195F5558007A08E1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D52F9142195F559D007A08E1 /* iss_pic.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +212,7 @@
 			files = (
 				D52F9124195F2085007A08E1 /* Main.storyboard in Resources */,
 				D52F9126195F2085007A08E1 /* Images.xcassets in Resources */,
+				D52F9143195F559D007A08E1 /* iss_pic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D52F9145195F5E67007A08E1 /* NetworkManager.swift in Sources */,
 				D52F9121195F2085007A08E1 /* ViewController.swift in Sources */,
 				D52F911F195F2085007A08E1 /* AppDelegate.swift in Sources */,
+				D52F913C195F2243007A08E1 /* Satellite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +423,7 @@
 				D52F9137195F2085007A08E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D52F9138195F2085007A08E1 /* Build configuration list for PBXNativeTarget "WhereISSTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +432,7 @@
 				D52F913A195F2085007A08E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
