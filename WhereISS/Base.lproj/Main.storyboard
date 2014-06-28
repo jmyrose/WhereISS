@@ -31,6 +31,17 @@
                                     <outletCollection property="gestureRecognizers" destination="Ygz-4h-7B3" appends="YES" id="jIm-sM-Zp4"/>
                                 </connections>
                             </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refresh.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zrg-sQ-VKm">
+                                <rect key="frame" x="0.0" y="425" width="50" height="50"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="PbZ-Hv-S79"/>
+                                    <constraint firstAttribute="height" constant="50" id="Qyb-kh-EsA"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ji8-6D-aMC" appends="YES" id="2IH-zu-3Yk"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -39,7 +50,9 @@
                             <constraint firstAttribute="trailing" secondItem="FbW-EY-UeF" secondAttribute="trailing" id="M2s-hy-dRA"/>
                             <constraint firstItem="fZO-8W-Stx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NLZ-p7-dPn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fZO-8W-Stx" secondAttribute="bottom" id="PRU-LC-IRm"/>
+                            <constraint firstItem="Zrg-sQ-VKm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eYm-aA-TT2"/>
                             <constraint firstAttribute="trailing" secondItem="fZO-8W-Stx" secondAttribute="trailing" id="gD8-c8-eGe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zrg-sQ-VKm" secondAttribute="bottom" constant="5" id="oSc-5V-tqQ"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -52,6 +65,11 @@
                 <tapGestureRecognizer id="Ygz-4h-7B3">
                     <connections>
                         <segue destination="nnj-Vr-Q0y" kind="presentation" identifier="stats" modalTransitionStyle="partialCurl" id="SFM-Zu-oAh"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ji8-6D-aMC">
+                    <connections>
+                        <action selector="refreshTapped:" destination="BYZ-38-t0r" id="mwa-Zx-ygO"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -151,5 +169,6 @@
     </scenes>
     <resources>
         <image name="globe.png" width="1000" height="1000"/>
+        <image name="refresh.png" width="256" height="256"/>
     </resources>
 </document>

@@ -25,16 +25,23 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.switchToStatsView.backgroundColor = UIColor(patternImage: UIImage(named: "tiny_grid.png"))
         
         // Load up the ISS data
-        self.networkManager.loadSatelliteData({
-            (satellite) in
-            self.satellite = satellite
-            self.updateMapWithData(satellite.latitude, longi: satellite.longitute)
-        }, {
-            (error) in
-            let alert:UIAlertController = UIAlertController(title: "Error!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        })
+        self.networkManager.loadSatelliteData(successfulDataLoad, failedDataLoad)
+    }
+    
+    @IBAction func refreshTapped(sender: AnyObject) {
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.networkManager.loadSatelliteData(successfulDataLoad, failedDataLoad)
+    }
+    
+    func successfulDataLoad(satellite:Satellite){
+        self.satellite = satellite
+        self.updateMapWithData(satellite.latitude, longi: satellite.longitute)
+    }
+    
+    func failedDataLoad(error:String){
+        let alert:UIAlertController = UIAlertController(title: "Error!", message: error, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
