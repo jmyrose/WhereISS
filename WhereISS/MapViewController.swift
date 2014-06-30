@@ -35,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func successfulDataLoad(satellite:Satellite){
         self.satellite = satellite
-        self.updateMapWithData(satellite.latitude, longi: satellite.longitute)
+        self.updateMapWithData(satellite.latitude, lon: satellite.longitute)
     }
     
     func failedDataLoad(error:String){
@@ -52,9 +52,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     // Mark where the satellite is on the map with the newly loaded data
-    func updateMapWithData(lat:Double, longi:Double){
+    func updateMapWithData(lat:Double, lon:Double){
         // Set the visual map region
-        let centerCoord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: longi);
+        let centerCoord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon);
         let viewRegion:MKCoordinateRegion = MKCoordinateRegion(center: centerCoord, span: MKCoordinateSpanMake(50, 50))
         mapView.setRegion(viewRegion, animated: true)
         

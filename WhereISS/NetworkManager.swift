@@ -28,29 +28,19 @@ class NetworkManager {
                 if !jsonError {
                     // WHY AREN'T YOU WORKING?!?!
                     /*switch(respDict["latitute"], respDict["longitude"], respDict["velocity"], respDict["altitude"]) {
-                    case (.Some(let lat as Double),
-                    .Some(let long as Double),
-                    .Some(let vel as Double),
-                    .Some(let alt as Double)):
-                    println("ALL GOOD!")
-                    default:
-                    println("MISSING JSON ERROR!")
-                    //TODO - error
+                        case (.Some(let lat as Double),
+                            .Some(let long as Double),
+                            .Some(let vel as Double),
+                            .Some(let alt as Double)):
+                                println("ALL GOOD!")
+                        default:
+                                println("MISSING JSON ERROR!")
                     }*/
-                    
-                    if let latObj : AnyObject = respDict["latitude"] {
-                        let latitude = latObj as Double
-                        if let longObj : AnyObject = respDict["longitude"] {
-                            let longitude = longObj as Double
-                            if let velObj : AnyObject = respDict["velocity"] {
-                                let velocity = velObj as Double
-                                if let altObj : AnyObject = respDict["altitude"] {
-                                    let altitude = altObj as Double
-                                    
-                                    success(satellite: Satellite(lat: latitude, longi: longitude, vel: velocity, alt: altitude))
-                                }
-                            }
-                        }
+                    switch(respDict["latitute"], respDict["longitude"], respDict["velocity"], respDict["altitude"]) {
+                    case (.Some(let lat), .Some(let lon), .Some(let vel), .Some(let alt)):
+                        success(satellite: Satellite(lat: lat as Double, lon: lon as Double, vel: vel as Double, alt: alt as Double))
+                    default:
+                        failure(error: "Missing JSON in the returned response")
                     }
                     
                 } else {
