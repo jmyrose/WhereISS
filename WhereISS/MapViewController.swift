@@ -14,8 +14,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     let networkManager:NetworkManager = NetworkManager()
     var satellite: Satellite?
     
-    @IBOutlet var mapView: MKMapView
-    @IBOutlet var switchToStatsView: UIView
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var switchToStatsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

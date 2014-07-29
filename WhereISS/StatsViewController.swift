@@ -12,10 +12,10 @@ class StatsViewController: UIViewController {
     
     var satellite:Satellite?
     
-    @IBOutlet var altitudeLabel: UILabel
-    @IBOutlet var velocityLabel: UILabel
-    @IBOutlet var latitudeLabel: UILabel
-    @IBOutlet var longitutdeLabel: UILabel
+    @IBOutlet weak var altitudeLabel: UILabel!
+    @IBOutlet weak var velocityLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitutdeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class StatsViewController: UIViewController {
     }
     
     @IBAction func globeTapped(sender: AnyObject) {
-        self.dismissModalViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }
